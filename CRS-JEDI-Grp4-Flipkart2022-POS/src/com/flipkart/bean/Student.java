@@ -3,50 +3,31 @@ package com.flipkart.bean;
 public class Student extends User {
 	
 
-	private String studentId;
-	private String studentName;
+	//private String studentId;
+	//private String studentName;
 	private String branch;
 	private int semester;
+	private boolean feePaymentStatus;
+	
+	private boolean isRegistered;
+	
 	
 	/**
 	 * @param studentId
 	 * @param branch
 	 * @param semester
 	 */
-	public Student(String studentId, String studentName, String branch, int semester) {
+	public Student(String userID, String name, String role, String password , String branch, int semester,
+			boolean feePaymentStatus,boolean isRegistered ) {
 		super();
-		this.studentId = studentId;
-		this.studentName =studentName;
+		//this.studentId = studentId;
+		//this.studentName =studentName;
 		this.branch = branch;
 		this.semester = semester;
+		this.feePaymentStatus = feePaymentStatus;
+		this.isRegistered = isRegistered;
 	}
 	
-	
-	/**
-	 * @return the studentId
-	 */
-	public String getStudentId() {
-		return studentId;
-	}
-	/**
-	 * @param studentId the studentId to set
-	 */
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
-	}
-	/**
-	 * @return the studentName
-	 */
-	public String getStudentName() {
-		return studentName;
-	}
-
-	/**
-	 * @param studentName the studentName to set
-	 */
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
 	
 	/**
 	 * @return the branch
@@ -72,6 +53,41 @@ public class Student extends User {
 	public void setSemester(int semester) {
 		this.semester = semester;
 	}
+	
+    /**
+     * Check Payment Status
+     * @return
+     */
+    public boolean isFeePaymentStatus() {
+        return feePaymentStatus;
+    }
+
+    /**
+     * Set Payment Status
+     * @param feePaymentStatus
+     */
+    public void setFeePaymentStatus(boolean feePaymentStatus) {
+        this.feePaymentStatus = feePaymentStatus;
+    }
+    
+    
+    /**
+     * Check Registration Status
+     * @return
+     */
+    public boolean isRegistered() {
+        return isRegistered;
+    }
+
+    /**
+     * Set Registration Status
+     * @param registered
+     */
+
+    public void setRegistered(boolean registered) {
+        isRegistered = registered;
+    }
+    
 
 	
 	
