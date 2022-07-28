@@ -17,19 +17,20 @@ public class ProfessorDB {
 //    public static Map<Integer,List<Integer>> registeredCourses;
 
 
-    public static void init() {
+    public  void init() {
 
         professorList = new HashMap<Integer,Professor>();
-        professorList.put(1,new Professor("1","Dr. Amit Kumar", "Mechanical","Assistant Professor"));
-        professorList.put(2,new Professor("5","Dr. Ashish Anand", "Electrical","Junior Professor"));
-        professorList.put(3,new Professor("4","Dr. Himangi Sharma", "Computer Science","Assistant Professor"));
+        
 
-
+        
+        professorList.put(1, new Professor("1","Dr. Amit Kumar", "Instructor", "passwordprof1", "CSE","Assistant Professor"));
+        professorList.put(2, new Professor("2","Dr. Ashish Anand", "Instructor", "passwordpro2", "CSE","Assistant Professor"));
+        professorList.put(3, new Professor("3","Dr. Himangi Sharma", "Instructor", "passwordprof3", "EEE","Professor"));
 
 
     }
 
-    public static void main(String[] args)
+   /* public static void main(String[] args)
     {
         init();
         for (Map.Entry<Integer, Professor> entry : professorList.entrySet())
@@ -37,6 +38,6 @@ public class ProfessorDB {
         	System.out.println("EntryNO: = " + entry.getKey() +  ", ProfessorId = " + entry.getValue().getUserID() +  ", ProfessorName = " + entry.getValue().getName()  +  ", Department = " + entry.getValue().getDepartment());
         }
         
-    }
+    }  */
 
 }

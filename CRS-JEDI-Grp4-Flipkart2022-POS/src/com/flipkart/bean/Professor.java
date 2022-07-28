@@ -1,8 +1,12 @@
 package com.flipkart.bean;
-import com.flipkart.bean.User;
 
 public class Professor extends User{
+	
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 763fe3f113ddef269777a46eb4ed73c7ba4219ac
 	private String department;
 	private String designation;
 	
@@ -12,18 +16,41 @@ public class Professor extends User{
 	 * @param department
 	 * @param designation
 	 */
+<<<<<<< HEAD
 
-	public Professor() {}
-	public Professor(String userID, String name, String department, String designation,String password ) {
-		super(userID,name,"Professor",password);
+	
+
+	public Professor(String userID,String name, String role, String password, String department, String designation) {
+
+		super(userID, name, role, password);
+		
+//		this.professorId = professorId;
+//		this.profName =profName;
+=======
+
+	public Professor(String userID,String name, String role, String password, String department, String designation) {
+
+		super();
+>>>>>>> 763fe3f113ddef269777a46eb4ed73c7ba4219ac
+
 		this.department = department;
 		this.designation = designation;
 	}
+	
 
+
+<<<<<<< HEAD
+
+	
+
+
+=======
+>>>>>>> 763fe3f113ddef269777a46eb4ed73c7ba4219ac
 	/**
 	 * @return the department
 	 */
-	public String getDepartment() {return department;
+	public String getDepartment() {
+		return department;
 	}
 
 
@@ -48,7 +75,10 @@ public class Professor extends User{
 	 */
 	public void setDesignation(String designation) {
 		this.designation = designation;
-
 	}
+	
+	
+	
+	
 
 }

@@ -5,8 +5,10 @@ package com.flipkart.app;
 
 import java.util.List;
 import java.util.Scanner;
-import com.flipkart.bean.Professor;
-import com.flipkart.app.CRSApplication;
+
+import com.flipkart.bean.Course;
+import com.flipkart.service.AdminServiceImpl;
+
 
 /**
  * @author stuti.priyambda
@@ -14,7 +16,8 @@ import com.flipkart.app.CRSApplication;
  */
 public class AdminCRS {
 
-	Scanner sc = new Scanner(System.in);
+	Scanner in = new Scanner(System.in);
+	AdminServiceImpl adminserviceimpl =new AdminServiceImpl();
 	/**
 	 * Method to Create Admin Menu
 	 */
@@ -33,7 +36,7 @@ public class AdminCRS {
 			System.out.println("9. Logout");
 			System.out.println("*******...............*************............*********");
 			
-			int choice = sc.nextInt();
+			int choice = in.nextInt();
 			
 			switch(choice) {
 			case 1:
@@ -101,28 +104,10 @@ public class AdminCRS {
 	private void addProfessor() {
 		
 		System.out.println("Add Professor");
-		Professor professor = new Professor();
+		
 
-		System.out.println("Enter Professor Name:");
-		String professorName = sc.next();
-		professor.setName(professorName);
-
-		System.out.println("Enter Department:");
-		String department = sc.next();
-		professor.setDepartment(department);
-
-		System.out.println("Enter Designation:");
-		String designation = sc.next();
-		professor.setDesignation(designation);
-
-		System.out.println("Enter User Id:");
-		String userId = sc.next();
-		professor.setUserID(userId);
-
-		System.out.println("Enter Password:");
-		String password = sc.next();
-		professor.setPassword(password);
 	}
+
 	/**
 	 * Method to view Students who are yet to be approved
 	 * @return List of Students whose admissions are pending
@@ -156,12 +141,16 @@ public class AdminCRS {
 		String courseId = sc.nextLine();
 		System.out.println("Please Enter Name of the course");
 		String courseName = sc.nextLine();
+		System.out.println("Please Enter Instructor Id");
+		String professorId = sc.nextLine();
 		System.out.println("Please Enter coursecredit");
 		int courseCredit = sc.nextInt();
-
-		Course newcourse = new Course(courseId, courseName, null, courseCredit);
-
+		
+		
+		Course newcourse = new Course(courseId, courseName, professorId, courseCredit);
+		System.out.println("going to add Course ");
 		adminserviceimpl.addCourseToCatalogue(newcourse);
+		System.out.println("course Added!!");
 
 	}
 	

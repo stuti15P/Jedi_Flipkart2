@@ -26,9 +26,11 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public void addCourseToCatalogue(Course course) {
 		// TODO Auto-generated method stub
+		System.out.println("check1");
 		AdminDB admindb =new AdminDB();
-	
+		System.out.println("check2");
 		admindb.courseList.add(course);
+		System.out.println("check3");
 		
 		
 	}

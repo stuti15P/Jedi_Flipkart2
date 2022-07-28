@@ -8,17 +8,19 @@ import com.flipkart.bean.Admin;
 import com.flipkart.bean.Course;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Student;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class AdminDB {
 	
 	public static Map<Integer,Admin> adminList;
-    public static List<Course> courseList;
+    public List<Course> courseList = new ArrayList<>();
     public static List<Student> studentList;
     public static List<Professor> profList;
     
     
-    public static void init() {
+    public  void init() {
     	adminList =new HashMap<Integer,Admin>();
     	Date date = new Date(2022-07-02);
     	
@@ -30,13 +32,16 @@ public class AdminDB {
         courseList.add(new Course("CS110", "Database", "3",4));
         courseList.add(new Course("CS504","Physics","5",2));
         
-//        studentList.add(new Student("1","Saransh","CS",5));
-//        studentList.add(new Student("2","Stuti","CS",7));
-//        studentList.add(new Student("3","Jackie","CS",3));
+         
+        studentList.add(new Student("1","Saransh","Student", "password", "CS",5, true, true));
+        studentList.add(new Student("2","Stuti", "Student", "password", "CS",7, true, true));
+        studentList.add(new Student("3","Jackie", "Student", "password", "CS",3, true, true));
         
-        profList.add(new Professor("1","Dr. Amit Kumar","CSE","Assistant Professor"));
-        profList.add(new Professor("2","Dr. Ashish Anand", "CSE","Assistant Professor"));
-        profList.add(new Professor("3","Dr. Himangi Sharma", "EEE","Professor"));
+        
+        
+        profList.add(new Professor("1","Dr. Amit Kumar", "Instructor", "passwordprof1", "CSE","Assistant Professor"));
+        profList.add(new Professor("2","Dr. Ashish Anand", "Instructor", "passwordpro2", "CSE","Assistant Professor"));
+        profList.add(new Professor("3","Dr. Himangi Sharma", "Instructor", "passwordprof3", "EEE","Professor"));
     
     }
     

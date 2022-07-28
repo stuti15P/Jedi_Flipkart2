@@ -17,19 +17,20 @@ public class StudentDB {
     public static Map<Integer,List<Integer>> registeredCourses;
 
 
-    public static void init() {
+    public  void init() {
 
         studentList = new HashMap<Integer,Student>();
         courseList = new ArrayList<Course>();
         registeredCourses = new HashMap<Integer, List<Integer>>();
 
-        studentList.put(1,new Student("s1","Saransh","student","a00","CS",1,true,true));
-        studentList.put(1,new Student("s2","Stuti","student","a11","EE",1,false,true));
-        studentList.put(1,new Student("s3","Komal","student","a22","CS",1,true,true));
-        studentList.put(1,new Student("s4","Vishal","student","a33","CS",1,false,true));
-        studentList.put(1,new Student("s5","Bhajan","student","a44","CS",1,true,false));
-        studentList.put(1,new Student("s6","Nova","student","a55","CS",1,true,true));
 
+        studentList.put(1, new Student("1","Saransh","Student", "password1", "CSE",5, true, true));
+        studentList.put(2, new Student("2","Stuti", "Student", "password2", "CSE",5, true, true));
+        studentList.put(3, new Student("3","Jackie", "Student", "password3", "CSE",3, true, true));
+        studentList.put(4, new Student("4","Vishal", "Student", "password4", "EEE",7, true, true));
+        studentList.put(5, new Student("5","Komal", "Student", "password5", "ENI",2, true, true));
+        
+        
         courseList.add(new Course("CS101", "DSA", "2",3));
         courseList.add(new Course("CS110", "Database", "3",4));
         courseList.add(new Course("CS504","Physics","5",2));
@@ -38,7 +39,7 @@ public class StudentDB {
 
     }
 
-    public static void main(String[] args)
+  /*  public static void main(String[] args)
     {
         init();
         for (Map.Entry<Integer, Student> entry : studentList.entrySet()) 
@@ -46,6 +47,6 @@ public class StudentDB {
         	System.out.println("EntryNO: = " + entry.getKey() +  ", StudentId = " + entry.getValue().getUserID()  +  ", StudentName = " + entry.getValue().getName());
         }
         
-    }
+    }  */
 
 }
