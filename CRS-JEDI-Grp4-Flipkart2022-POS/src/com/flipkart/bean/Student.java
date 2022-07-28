@@ -6,14 +6,14 @@ public class Student extends User {
 	private String studentId;
 	private String studentName;
 	private String branch;
-	private String semester;
+	private int semester;
 	
 	/**
 	 * @param studentId
 	 * @param branch
 	 * @param semester
 	 */
-	public Student(String studentId, String studentName, String branch, String semester) {
+	public Student(String studentId, String studentName, String branch, int semester) {
 		super();
 		this.studentId = studentId;
 		this.studentName =studentName;
@@ -63,13 +63,13 @@ public class Student extends User {
 	/**
 	 * @return the semester
 	 */
-	public String getSemester() {
+	public int getSemester() {
 		return semester;
 	}
 	/**
 	 * @param semester the semester to set
 	 */
-	public void setSemester(String semester) {
+	public void setSemester(int semester) {
 		this.semester = semester;
 	}
 
