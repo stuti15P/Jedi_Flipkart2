@@ -23,11 +23,12 @@ public class StudentDB {
         courseList = new ArrayList<Course>();
         registeredCourses = new HashMap<Integer, List<Integer>>();
 
-        studentList.put(1,new Student("1","Saransh","CS",5));
-        studentList.put(2,new Student("2","Stuti","CS",7));
-        studentList.put(3,new Student("3","Jachie","CS",3));
-        studentList.put(4,new Student("4","Vishal","EEE",5));
-        studentList.put(5,new Student("5","Komal","ENI",7));
+        studentList.put(1,new Student("s1","Saransh","student","a00","CS",1,true,true));
+        studentList.put(1,new Student("s2","Stuti","student","a11","EE",1,false,true));
+        studentList.put(1,new Student("s3","Komal","student","a22","CS",1,true,true));
+        studentList.put(1,new Student("s4","Vishal","student","a33","CS",1,false,true));
+        studentList.put(1,new Student("s5","Bhajan","student","a44","CS",1,true,false));
+        studentList.put(1,new Student("s6","Nova","student","a55","CS",1,true,true));
 
         courseList.add(new Course("CS101", "DSA", "2",3));
         courseList.add(new Course("CS110", "Database", "3",4));
