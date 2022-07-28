@@ -4,7 +4,7 @@ Member List :
 
 1. Stuti
 2. Komal
-3. Bajan
+3. Bhajan
 4. Vishal Swich
 5. Saransh
 
