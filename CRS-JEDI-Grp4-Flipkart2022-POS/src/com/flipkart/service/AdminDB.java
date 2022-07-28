@@ -26,17 +26,17 @@ public class AdminDB {
     	adminList.put(2 , new Admin("2","Seema","Admin","123",date));
     	adminList.put(3 , new Admin("3","Zain","Admin","123",date));
     	
-        courseList.add(new Course("CS101", "DSA", 2,3));
-        courseList.add(new Course("CS110", "Database", 3,4));
-        courseList.add(new Course("CS504","Physics",5,2));
+        courseList.add(new Course("CS101", "DSA", "2",3));
+        courseList.add(new Course("CS110", "Database", "3",4));
+        courseList.add(new Course("CS504","Physics","5",2));
         
         studentList.add(new Student("1","Saransh","CS",5));
         studentList.add(new Student("2","Stuti","CS",7));
         studentList.add(new Student("3","Jackie","CS",3));
         
-        profList.add(new Professor(1,"CSE","Assistant Professor"));
-        profList.add(new Professor(2,"CSE","Assistant Professor"));
-        profList.add(new Professor(3,"EEE","Professor"));
+        profList.add(new Professor("1","Dr. Amit Kumar","CSE","Assistant Professor"));
+        profList.add(new Professor("2","Dr. Ashish Anand", "CSE","Assistant Professor"));
+        profList.add(new Professor("3","Dr. Himangi Sharma", "EEE","Professor"));
     
     }
     

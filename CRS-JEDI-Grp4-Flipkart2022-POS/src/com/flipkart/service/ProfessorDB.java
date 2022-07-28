@@ -20,9 +20,9 @@ public class ProfessorDB {
     public static void init() {
 
         professorList = new HashMap<Integer,Professor>();
-        professorList.put(1,new Professor(1,"Dr. Amit Kumar", "Mechanical","Assistant Professor"));
-        professorList.put(2,new Professor(5,"Dr. Ashish Anand", "Electrical","Junior Professor"));
-        professorList.put(3,new Professor(4,"Dr. Himangi Sharma", "Computer Science","Assistant Professor"));
+        professorList.put(1,new Professor("1","Dr. Amit Kumar", "Mechanical","Assistant Professor"));
+        professorList.put(2,new Professor("5","Dr. Ashish Anand", "Electrical","Junior Professor"));
+        professorList.put(3,new Professor("4","Dr. Himangi Sharma", "Computer Science","Assistant Professor"));
 
 
 

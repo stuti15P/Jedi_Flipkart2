@@ -3,7 +3,7 @@ package com.flipkart.bean;
 public class Professor extends User{
 	
 
-	private int professorId;
+	private String professorId;
 	private String profName;
 	
 
@@ -16,7 +16,7 @@ public class Professor extends User{
 	 * @param department
 	 * @param designation
 	 */
-	public Professor(int professorId, String profName, String department, String designation) {
+	public Professor(String professorId, String profName, String department, String designation) {
 		super();
 		this.professorId = professorId;
 		this.profName =profName;
@@ -28,7 +28,7 @@ public class Professor extends User{
 	/**
 	 * @return the professorId
 	 */
-	public int getProfessorId() {
+	public String getProfessorId() {
 		return professorId;
 	}
 
@@ -36,7 +36,7 @@ public class Professor extends User{
 	/**
 	 * @param professorId the professorId to set
 	 */
-	public void setProfessorId(int professorId) {
+	public void setProfessorId(String professorId) {
 		this.professorId = professorId;
 	}
 
