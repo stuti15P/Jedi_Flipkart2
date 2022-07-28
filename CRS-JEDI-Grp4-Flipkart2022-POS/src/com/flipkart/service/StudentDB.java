@@ -10,7 +10,7 @@ import java.util.Map.Entry;
 import com.flipkart.bean.Course;
 import com.flipkart.bean.Student;
 
-public class DummyDB {
+public class StudentDB {
 
     public static Map<Integer,Student> studentList;
     public static List<Course> courseList;
