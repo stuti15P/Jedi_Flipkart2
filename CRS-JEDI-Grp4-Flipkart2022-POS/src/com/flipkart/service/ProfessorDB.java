@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.flipkart.bean.Course;
-import com.flipkart.bean.Professort;
+import com.flipkart.bean.Professor;
 
 public class ProfessorDB {
 

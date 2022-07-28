@@ -5,7 +5,7 @@ package com.flipkart.app;
 
 import java.util.List;
 import java.util.Scanner;
-
+import com.flipkart.bean.Professor;
 
 /**
  * @author stuti.priyambda
@@ -100,6 +100,41 @@ public class AdminCRS {
 	private void addProfessor() {
 		
 		System.out.println("Add Professor");
+		Professor professor = new Professor();
+
+
+
+		logger.info("Enter Professor Name:");
+		String professorName = scanner.next();
+		professor.setName(professorName);
+
+		logger.info("Enter Department:");
+		String department = scanner.next();
+		professor.setDepartment(department);
+
+		logger.info("Enter Designation:");
+		String designation = scanner.next();
+		professor.setDesignation(designation);
+
+		logger.info("Enter User Id:");
+		String userId = scanner.next();
+		professor.setUserId(userId);
+
+		logger.info("Enter Password:");
+		String password = scanner.next();
+		professor.setPassword(password);
+
+		logger.info("Enter Gender: \t 1: Male \t 2.Female \t 3.Other ");
+		int gender = scanner.nextInt();
+		professor.setGender(Gender.getName(gender));
+
+		logger.info("Enter Address:");
+		String address = scanner.next();
+		professor.setAddress(address);
+
+		logger.info("Enter Country:");
+		String country = scanner.next();
+		professor.setCountry(country);
 		
 
 	}
