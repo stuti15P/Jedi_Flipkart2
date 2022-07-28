@@ -42,7 +42,7 @@ public class DummyDB {
         init();
         for (Map.Entry<Integer, Student> entry : studentList.entrySet()) 
         {
-        	System.out.println("EntryNO: = " + entry.getKey() + ", StudentId = " +entry.getValue().getStudentId() +  ", StudentName = " + entry.getValue().getStudentName());
+        	System.out.println("EntryNO: = " + entry.getKey() +  ", StudentName = " + entry.getValue().getStudentName());
         }
         
     }
