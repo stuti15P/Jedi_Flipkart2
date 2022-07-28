@@ -6,6 +6,7 @@ package com.flipkart.app;
 import java.util.List;
 import java.util.Scanner;
 import com.flipkart.bean.Professor;
+import com.flipkart.app.CRSApplication;
 
 /**
  * @author stuti.priyambda
@@ -13,7 +14,7 @@ import com.flipkart.bean.Professor;
  */
 public class AdminCRS {
 
-	Scanner in = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
 	/**
 	 * Method to Create Admin Menu
 	 */
@@ -32,7 +33,7 @@ public class AdminCRS {
 			System.out.println("9. Logout");
 			System.out.println("*******...............*************............*********");
 			
-			int choice = in.nextInt();
+			int choice = sc.nextInt();
 			
 			switch(choice) {
 			case 1:
@@ -102,43 +103,26 @@ public class AdminCRS {
 		System.out.println("Add Professor");
 		Professor professor = new Professor();
 
-
-
-		logger.info("Enter Professor Name:");
-		String professorName = scanner.next();
+		System.out.println("Enter Professor Name:");
+		String professorName = sc.next();
 		professor.setName(professorName);
 
-		logger.info("Enter Department:");
-		String department = scanner.next();
+		System.out.println("Enter Department:");
+		String department = sc.next();
 		professor.setDepartment(department);
 
-		logger.info("Enter Designation:");
-		String designation = scanner.next();
+		System.out.println("Enter Designation:");
+		String designation = sc.next();
 		professor.setDesignation(designation);
 
-		logger.info("Enter User Id:");
-		String userId = scanner.next();
-		professor.setUserId(userId);
+		System.out.println("Enter User Id:");
+		String userId = sc.next();
+		professor.setUserID(userId);
 
-		logger.info("Enter Password:");
-		String password = scanner.next();
+		System.out.println("Enter Password:");
+		String password = sc.next();
 		professor.setPassword(password);
-
-		logger.info("Enter Gender: \t 1: Male \t 2.Female \t 3.Other ");
-		int gender = scanner.nextInt();
-		professor.setGender(Gender.getName(gender));
-
-		logger.info("Enter Address:");
-		String address = scanner.next();
-		professor.setAddress(address);
-
-		logger.info("Enter Country:");
-		String country = scanner.next();
-		professor.setCountry(country);
-		
-
 	}
-
 	/**
 	 * Method to view Students who are yet to be approved
 	 * @return List of Students whose admissions are pending

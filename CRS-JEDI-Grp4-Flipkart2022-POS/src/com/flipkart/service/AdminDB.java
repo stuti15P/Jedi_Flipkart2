@@ -30,13 +30,13 @@ public class AdminDB {
         courseList.add(new Course("CS110", "Database", 3,4));
         courseList.add(new Course("CS504","Physics",5,2));
         
-        studentList.add(new Student("1","Saransh","CS",5));
-        studentList.add(new Student("2","Stuti","CS",7));
-        studentList.add(new Student("3","Jackie","CS",3));
+//        studentList.add(new Student("1","Saransh","CS",5));
+//        studentList.add(new Student("2","Stuti","CS",7));
+//        studentList.add(new Student("3","Jackie","CS",3));
         
-        profList.add(new Professor(1,"CSE","Assistant Professor"));
-        profList.add(new Professor(2,"CSE","Assistant Professor"));
-        profList.add(new Professor(3,"EEE","Professor"));
+//        profList.add(new Professor(1,"CSE","Assistant Professor"));
+//        profList.add(new Professor(2,"CSE","Assistant Professor"));
+//        profList.add(new Professor(3,"EEE","Professor"));
     
     }
     
