@@ -4,6 +4,9 @@ public class Professor extends User{
 	
 
 	private int professorId;
+	private String profName;
+	
+
 	private String department;
 	private String designation;
 	
@@ -13,9 +16,10 @@ public class Professor extends User{
 	 * @param department
 	 * @param designation
 	 */
-	public Professor(int professorId, String department, String designation) {
+	public Professor(int professorId, String profName, String department, String designation) {
 		super();
 		this.professorId = professorId;
+		this.profName =profName;
 		this.department = department;
 		this.designation = designation;
 	}
@@ -36,6 +40,21 @@ public class Professor extends User{
 		this.professorId = professorId;
 	}
 
+	/**
+	 * @return the profName
+	 */
+	public String getProfName() {
+		return profName;
+	}
+
+	/**
+	 * @param profName the profName to set
+	 */
+	public void setProfName(String profName) {
+		this.profName = profName;
+	}
+
+	
 
 	/**
 	 * @return the department
@@ -67,6 +86,8 @@ public class Professor extends User{
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+	
+	
 	
 	
 
