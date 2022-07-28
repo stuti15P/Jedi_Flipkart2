@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.flipkart.bean.Course;
-import com.flipkart.bean.Professort;
+import com.flipkart.bean.Professor;
 
 public class ProfessorDB {
 
@@ -20,9 +20,9 @@ public class ProfessorDB {
     public static void init() {
 
         professorList = new HashMap<Integer,Professor>();
-        professorList.put(1,new Professor(1,"Mechanical","Assistant Professor"));
-        professorList.put(2,new Professor(5,"Electrical","Junior Professor"));
-        professorList.put(3,new Professor(4,"Computer Science","Assistant Professor"));
+        professorList.put(1,new Professor(1,"Dr. Amit Kumar", "Mechanical","Assistant Professor"));
+        professorList.put(2,new Professor(5,"Dr. Ashish Anand", "Electrical","Junior Professor"));
+        professorList.put(3,new Professor(4,"Dr. Himangi Sharma", "Computer Science","Assistant Professor"));
 
 
 
@@ -34,7 +34,7 @@ public class ProfessorDB {
         init();
         for (Map.Entry<Integer, Professor> entry : professorList.entrySet())
         {
-        	System.out.println("EntryNO: = " + entry.getKey() +  ", ProfessorId = " + entry.getValue().getProfessorId()  +  ", Department = " + entry.getValue().getDepartment());
+        	System.out.println("EntryNO: = " + entry.getKey() +  ", ProfessorId = " + entry.getValue().getProfessorId() +  ", ProfessorName = " + entry.getValue().getProfName()  +  ", Department = " + entry.getValue().getDepartment());
         }
         
     }
