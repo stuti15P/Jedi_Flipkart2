@@ -4,7 +4,7 @@ public class Course {
 
 	private String courseId;
 	private String courseName;
-	private int professorId;
+	private String professorId;
 	private int courseCredits;
 	
 	
@@ -14,7 +14,7 @@ public class Course {
 	 * @param assignedProfessor
 	 * @param courseCredits
 	 */
-	public Course(String courseId, String courseName, int professorId, int courseCredits) {
+	public Course(String courseId, String courseName, String professorId, int courseCredits) {
 		super();
 		this.courseId = courseId;
 		this.courseName = courseName;
@@ -58,7 +58,7 @@ public class Course {
 	/**
 	 * @return the professorId
 	 */
-	public int getProfessorId() {
+	public String getProfessorId() {
 		return professorId;
 	}
 
@@ -66,7 +66,7 @@ public class Course {
 	/**
 	 * @param professorId the professorId to set
 	 */
-	public void setProfessorId(int professorId) {
+	public void setProfessorId(String professorId) {
 		this.professorId = professorId;
 	}
 

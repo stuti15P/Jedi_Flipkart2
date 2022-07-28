@@ -151,7 +151,17 @@ public class AdminCRS {
 	 * @throws CourseExistsAlreadyException 
 	 */
 	private void addCourseToCatalogue() {
-		System.out.println("Add course");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please Enter ID of the course");
+		String courseId = sc.nextLine();
+		System.out.println("Please Enter Name of the course");
+		String courseName = sc.nextLine();
+		System.out.println("Please Enter coursecredit");
+		int courseCredit = sc.nextInt();
+
+		Course newcourse = new Course(courseId, courseName, null, courseCredit);
+
+		adminserviceimpl.addCourseToCatalogue(newcourse);
 
 	}
 	

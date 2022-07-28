@@ -29,9 +29,9 @@ public class StudentDB {
         studentList.put(4,new Student("4","Vishal","EEE",5));
         studentList.put(5,new Student("5","Komal","ENI",7));
 
-        courseList.add(new Course("CS101", "DSA", 2,3));
-        courseList.add(new Course("CS110", "Database", 3,4));
-        courseList.add(new Course("CS504","Physics",5,2));
+        courseList.add(new Course("CS101", "DSA", "2",3));
+        courseList.add(new Course("CS110", "Database", "3",4));
+        courseList.add(new Course("CS504","Physics","5",2));
 
 
 

@@ -3,6 +3,8 @@
  */
 package com.flipkart.service;
 
+import com.flipkart.bean.Course;
+
 /**
  * @author stuti.priyambda
  *
@@ -22,8 +24,12 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public void addCourse() {
+	public void addCourseToCatalogue(Course course) {
 		// TODO Auto-generated method stub
+		AdminDB admindb =new AdminDB();
+	
+		admindb.courseList.add(course);
+		
 		
 	}
 
