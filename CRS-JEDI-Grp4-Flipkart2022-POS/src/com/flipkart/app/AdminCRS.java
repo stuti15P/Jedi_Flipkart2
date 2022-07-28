@@ -141,12 +141,16 @@ public class AdminCRS {
 		String courseId = sc.nextLine();
 		System.out.println("Please Enter Name of the course");
 		String courseName = sc.nextLine();
+		System.out.println("Please Enter Instructor Id");
+		String professorId = sc.nextLine();
 		System.out.println("Please Enter coursecredit");
 		int courseCredit = sc.nextInt();
 		
-		Course newcourse = new Course(courseId, courseName, null, courseCredit);
 		
+		Course newcourse = new Course(courseId, courseName, professorId, courseCredit);
+		System.out.println("going to add Course ");
 		adminserviceimpl.addCourseToCatalogue(newcourse);
+		System.out.println("course Added!!");
 
 	}
 	

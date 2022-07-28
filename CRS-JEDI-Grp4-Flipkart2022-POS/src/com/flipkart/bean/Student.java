@@ -8,7 +8,7 @@ public class Student extends User {
 	private String branch;
 	private int semester;
 	private boolean feePaymentStatus;
-	
+	private String password;
 	private boolean isRegistered;
 	
 	
@@ -17,11 +17,11 @@ public class Student extends User {
 	 * @param branch
 	 * @param semester
 	 */
-	public Student(String userID, String name, String role, String password , String branch, int semester,
-			boolean feePaymentStatus,boolean isRegistered ) {
-		super();
+	public Student(String userID, String name, String role, String password , String branch, int semester,boolean feePaymentStatus,boolean isRegistered ) {
+		super(userID, name, role, password);
 		//this.studentId = studentId;
-		//this.studentName =studentName;
+		//this.name =studentName;
+		
 		this.branch = branch;
 		this.semester = semester;
 		this.feePaymentStatus = feePaymentStatus;
