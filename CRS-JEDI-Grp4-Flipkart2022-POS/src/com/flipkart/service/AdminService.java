@@ -9,6 +9,7 @@ public interface AdminService {
 	public void approvedStudent();
 	public void addProfessor();
 	public void addCourseToCatalogue(Course course);
-	public void deleteCourse();
+	public void viewCourseCatalog();
+	public void deleteCourse(String courseId);
 	
 }

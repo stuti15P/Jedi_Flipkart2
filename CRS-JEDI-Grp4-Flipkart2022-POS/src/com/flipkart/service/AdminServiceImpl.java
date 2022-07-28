@@ -10,6 +10,7 @@ import com.flipkart.bean.Course;
  *
  */
 public class AdminServiceImpl implements AdminService{
+	AdminDB admindb =new AdminDB();
 
 	@Override
 	public void approvedStudent() {
@@ -26,18 +27,34 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public void addCourseToCatalogue(Course course) {
 		// TODO Auto-generated method stub
-		System.out.println("check1");
-		AdminDB admindb =new AdminDB();
-		System.out.println("check2");
 		admindb.courseList.add(course);
-		System.out.println("check3");
-		
 		
 	}
 
 	@Override
-	public void deleteCourse() {
+	public void deleteCourse(String courseId) {
 		// TODO Auto-generated method stub
+		for (Course course: admindb.courseList) 
+		{
+			if(course.getCourseId().equals(courseId))
+			{
+				admindb.courseList.remove(course);
+				break;
+			}
+		  // code block to be executed
+		} 
+		
+	}
+
+	@Override
+	public void viewCourseCatalog() {
+		// TODO Auto-generated method stub
+		for (Course course: admindb.courseList) 
+		{
+			System.out.println(course.getCourseId() + " "+ course.getCourseName());
+		  // code block to be executed
+		} 
+		
 		
 	}
 
