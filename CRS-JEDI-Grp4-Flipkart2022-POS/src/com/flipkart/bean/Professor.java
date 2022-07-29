@@ -12,6 +12,7 @@ public class Professor extends User{
 	 * @param designation
 	 */
 
+	
 
 	public Professor(String userID,String name, String role, String password, String department, String designation) {
 
@@ -19,8 +20,11 @@ public class Professor extends User{
 
 		this.department = department;
 		this.designation = designation;
+
 	}
 	public Professor(){}
+
+
 
 	/**
 	 * @return the department

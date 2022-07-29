@@ -81,6 +81,12 @@ public class AdminCRS {
 		}
 	}
 	
+	
+	private void viewCoursesInCatalogue() {
+		//System.out.println("view course catalogue");
+		adminserviceimpl.viewCourseCatalog();
+	}
+	
 	private void generateReportCard() 
 	{
 		
@@ -148,7 +154,12 @@ public class AdminCRS {
 //	 * @throws CourseNotFoundException
 //	 */
 	private void removeCourse() {
-		System.out.println("Remove course");
+		//System.out.println("Remove course");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please Enter ID of the course to remove!!");
+		String courseId = sc.nextLine();
+		adminserviceimpl.deleteCourse(courseId);
+		System.out.println("\n" +courseId + " course Removed!!  ");
 	}
 
 //	/**
@@ -169,7 +180,7 @@ public class AdminCRS {
 		Course newcourse = new Course(courseId, courseName, professorId, courseCredit);
 		System.out.println("going to add Course ");
 		adminserviceimpl.addCourseToCatalogue(newcourse);
-		System.out.println("course Added!!");
+		System.out.println("**** course Added!!  ******");
 
 	}
 	
@@ -177,7 +188,5 @@ public class AdminCRS {
 	{
 		System.out.println("viewPendingAdmissions()");
 	}
-	private void viewCoursesInCatalogue() {
-		System.out.println("view course catalogue");
-	}
+	
 }

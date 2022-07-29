@@ -9,6 +9,11 @@ package com.flipkart.bean;
  */
 public class EnrolledStudent {
 	private String courseId;
+	private String courseName;
+	private String studentId;
+	
+	
+	
 	public String getCourseId() {
 		return courseId;
 	}
@@ -21,14 +26,12 @@ public class EnrolledStudent {
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
-	public int getStudentId() {
+	public String getStudentId() {
 		return studentId;
 	}
-	public void setStudentId(int studentId) {
+	public void setStudentId(String studentId) {
 		this.studentId = studentId;
 	}
-	private String courseName;
-	private int studentId;
 
 }
 
