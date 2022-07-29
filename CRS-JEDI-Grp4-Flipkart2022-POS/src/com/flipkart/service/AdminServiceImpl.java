@@ -16,7 +16,6 @@ import com.flipkart.bean.Course;
 public class AdminServiceImpl implements AdminService{
 	AdminDB admindb =new AdminDB();
 
-	public AdminDB admindb =new AdminDB();
 	public ProfessorDB professorDB = new ProfessorDB();
 	@Override
 	public void approvedStudent() {
