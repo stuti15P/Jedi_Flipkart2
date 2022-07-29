@@ -14,9 +14,9 @@ import com.flipkart.bean.EnrolledStudent;
  */
 public interface ProfessorService {
 	
-	public boolean addGrade(int studentId, String courseId, int grade);
-	public List<EnrolledStudent> viewEnrolledStudents(int profId);
-	public List<Course> viewOwnCourse(int profId);
+	public boolean addGrade(String studentId, String courseId, int grade);
+	public List<EnrolledStudent> viewEnrolledStudents(String profId);
+	public List<Course> viewOwnCourse(String profId);
 	
 	
 }
