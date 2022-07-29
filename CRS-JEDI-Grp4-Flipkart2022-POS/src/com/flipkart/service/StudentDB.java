@@ -23,7 +23,6 @@ public class StudentDB {
         courseList = new ArrayList<Course>();
         registeredCourses = new HashMap<Integer, List<Integer>>();
 
-
         studentList.put(1, new Student("1","Saransh","Student", "password1", "CSE",5, true, true));
         studentList.put(2, new Student("2","Stuti", "Student", "password2", "CSE",5, true, true));
         studentList.put(3, new Student("3","Jackie", "Student", "password3", "CSE",3, true, true));

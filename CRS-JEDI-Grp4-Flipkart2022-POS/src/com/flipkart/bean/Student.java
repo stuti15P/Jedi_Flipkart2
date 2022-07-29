@@ -1,5 +1,5 @@
 package com.flipkart.bean;
-
+import com.flipkart.bean.User;
 public class Student extends User {
 	
 
@@ -13,7 +13,6 @@ public class Student extends User {
 	
 	
 	/**
-	 * @param studentId
 	 * @param branch
 	 * @param semester
 	 */

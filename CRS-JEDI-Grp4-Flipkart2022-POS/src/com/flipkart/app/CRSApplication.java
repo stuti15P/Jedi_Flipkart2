@@ -2,6 +2,9 @@
  * 
  */
 package com.flipkart.app;
+import com.flipkart.app.StudentCRS;
+import com.flipkart.app.ProfessorCRS;
+import com.flipkart.app.AdminCRS;
 
 /**
  * @author stuti.priyambda

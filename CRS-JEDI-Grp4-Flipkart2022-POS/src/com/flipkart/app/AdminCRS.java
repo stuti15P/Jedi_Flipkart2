@@ -5,10 +5,10 @@ package com.flipkart.app;
 
 import java.util.List;
 import java.util.Scanner;
-
 import com.flipkart.bean.Course;
 import com.flipkart.service.AdminServiceImpl;
-
+import com.flipkart.bean.Professor;
+import com.flipkart.app.CRSApplication;
 
 /**
  * @author stuti.priyambda
@@ -16,7 +16,7 @@ import com.flipkart.service.AdminServiceImpl;
  */
 public class AdminCRS {
 
-	Scanner in = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
 	AdminServiceImpl adminserviceimpl =new AdminServiceImpl();
 	/**
 	 * Method to Create Admin Menu
@@ -36,7 +36,7 @@ public class AdminCRS {
 			System.out.println("9. Logout");
 			System.out.println("*******...............*************............*********");
 			
-			int choice = in.nextInt();
+			int choice = sc.nextInt();
 			
 			switch(choice) {
 			case 1:
@@ -88,8 +88,6 @@ public class AdminCRS {
 		
 	}
 
-	
-
 	/**
 	 * Method to assign Course to a Professor
 	 */
@@ -104,7 +102,29 @@ public class AdminCRS {
 	private void addProfessor() {
 		
 		System.out.println("Add Professor");
-		
+		 Professor professor = new Professor();
+
+		System.out.println("Enter Professor Name:");
+		String professorName = sc.next();
+		professor.setName(professorName);
+
+		System.out.println("Enter Department:");
+		String department = sc.next();
+		professor.setDepartment(department);
+
+		System.out.println("Enter Designation:");
+		String designation = sc.next();
+		professor.setDesignation(designation);
+
+		System.out.println("Enter User Id:");
+		String userId = sc.next();
+		professor.setUserID(userId);
+
+		System.out.println("Enter Password:");
+		String password = sc.next();
+		professor.setPassword(password);
+		adminserviceimpl.addProfessor(professor);
+
 
 	}
 
@@ -123,18 +143,18 @@ public class AdminCRS {
 		
 	}
 
-	/**
-	 * Method to delete Course from catalogue
-	 * @throws CourseNotFoundException 
-	 */
+//	/**
+//	 * Method to delete Course from catalogue
+//	 * @throws CourseNotFoundException
+//	 */
 	private void removeCourse() {
 		System.out.println("Remove course");
 	}
-	
-	/**
-	 * Method to add Course to catalogue
-	 * @throws CourseExistsAlreadyException 
-	 */
+
+//	/**
+//	 * Method to add Course to catalogue
+//	 * @throws CourseExistsAlreadyException
+//	 */
 	private void addCourseToCatalogue() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please Enter ID of the course");
@@ -145,8 +165,7 @@ public class AdminCRS {
 		String professorId = sc.nextLine();
 		System.out.println("Please Enter coursecredit");
 		int courseCredit = sc.nextInt();
-		
-		
+
 		Course newcourse = new Course(courseId, courseName, professorId, courseCredit);
 		System.out.println("going to add Course ");
 		adminserviceimpl.addCourseToCatalogue(newcourse);

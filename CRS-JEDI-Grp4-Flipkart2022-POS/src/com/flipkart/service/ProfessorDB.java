@@ -12,21 +12,20 @@ import com.flipkart.bean.Professor;
 
 public class ProfessorDB {
 
-    public static Map<Integer,Professor> professorList;
+    public Map<Integer,Professor> professorList = new HashMap<Integer,Professor>();
+
 //    public static List<Course> courseList;
 //    public static Map<Integer,List<Integer>> registeredCourses;
 
 
-    public  void init() {
+
+    public void init() {
 
         professorList = new HashMap<Integer,Professor>();
-        
-
         
         professorList.put(1, new Professor("1","Dr. Amit Kumar", "Instructor", "passwordprof1", "CSE","Assistant Professor"));
         professorList.put(2, new Professor("2","Dr. Ashish Anand", "Instructor", "passwordpro2", "CSE","Assistant Professor"));
         professorList.put(3, new Professor("3","Dr. Himangi Sharma", "Instructor", "passwordprof3", "EEE","Professor"));
-
 
     }
 
