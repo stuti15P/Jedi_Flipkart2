@@ -2,9 +2,16 @@
  * 
  */
 package com.flipkart.app;
+
 import com.flipkart.app.StudentCRS;
 import com.flipkart.app.ProfessorCRS;
 import com.flipkart.app.AdminCRS;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author stuti.priyambda
@@ -12,11 +19,13 @@ import com.flipkart.app.AdminCRS;
  */
 
 
-
+import java.sql.Connection;
+import java.util.ConcurrentModificationException;
 import java.util.Scanner;
 
 
 public class CRSApplication {
+	public static Connection connection;
 	
 	static boolean loggedin =false;
 

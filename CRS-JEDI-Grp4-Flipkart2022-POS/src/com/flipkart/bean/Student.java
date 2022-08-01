@@ -26,6 +26,9 @@ public class Student extends User {
 		this.feePaymentStatus = feePaymentStatus;
 		this.isRegistered = isRegistered;
 	}
+	public Student(){
+
+	}
 	
 	
 	/**

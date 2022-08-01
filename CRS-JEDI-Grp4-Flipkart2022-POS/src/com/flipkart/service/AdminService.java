@@ -1,12 +1,12 @@
 package com.flipkart.service;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Course;
-
+import com.flipkart.bean.Student;
 public interface AdminService {
 
 	//public List<RegisteredCourse> createGradeCard();
 	
-	public void approvedStudent();
+	public void approveStudent(Student student);
 	public void addProfessor(Professor professor);
 	public void addCourseToCatalogue(Course course);
 	public void viewCourseCatalog();

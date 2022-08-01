@@ -9,7 +9,7 @@ import com.flipkart.bean.Course;
 import com.flipkart.service.AdminServiceImpl;
 import com.flipkart.bean.Professor;
 import com.flipkart.app.CRSApplication;
-
+import com.flipkart.bean.Student;
 /**
  * @author stuti.priyambda
  *
@@ -108,7 +108,7 @@ public class AdminCRS {
 	private void addProfessor() {
 		
 		System.out.println("Add Professor");
-		 Professor professor = new Professor();
+		Professor professor = new Professor();
 
 		System.out.println("Enter Professor Name:");
 		String professorName = sc.next();
@@ -143,8 +143,37 @@ public class AdminCRS {
 	 * Method to approve a Student using Student's ID
 	 */
 	private void approveStudent() {
-		
-		
+		System.out.println("Add Student");
+		Student student = new Student();
+
+		System.out.println("Enter Student Name:");
+		String name = sc.next();
+		student.setName(name);
+
+		System.out.println("Enter Student Branch:");
+		String branch = sc.next();
+		student.setBranch(branch);
+
+		System.out.println("Enter Student Semester:");
+		int semester = sc.nextInt();
+		student.setSemester(semester);
+
+		System.out.println("Enter if students is isRegistered or not");
+		boolean isRegisterd = sc.nextBoolean();
+		student.setRegistered(isRegisterd);
+
+		System.out.println("Enter if fee is paid of not");
+		boolean feePaymentStatus = sc.nextBoolean();
+		student.setFeePaymentStatus(feePaymentStatus);
+
+		System.out.println("Enter User Id:");
+		String userId = sc.next();
+		student.setUserID(userId);
+
+		System.out.println("Enter Password:");
+		String password = sc.next();
+		student.setPassword(password);
+		adminserviceimpl.approveStudent(student);
 		System.out.println("Approve students");
 		
 	}

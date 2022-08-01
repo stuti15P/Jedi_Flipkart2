@@ -1,7 +1,5 @@
 package com.flipkart.utils;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,7 +18,7 @@ public class DBUtils {
 
 	   //  Database credentials
 	   static final String USER = "root";
-	   static final String PASS = "Blue_178760";
+	   static final String PASS = "Saransh@123";
 	   
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
