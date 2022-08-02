@@ -18,7 +18,6 @@ public class DBUtils {
 
 	   //  Database credentials
 	   static final String USER = "root";
-	   static final String PASS = "Blue_178760";
 
 	   static final String PASS = "Saransh@123";
 
@@ -31,7 +30,7 @@ public class DBUtils {
 		 PreparedStatement stmt = null;
 
 		 try{
-			 	// Step 3 Register Driver here and create connectio
+			 	// Step 3 Regiater Driver here and create connectio
 				Class.forName("com.mysql.jdbc.Driver");
 
 			   // Step 4 make/open  a connection
@@ -51,3 +50,4 @@ public class DBUtils {
 
 	}//end main
 	}
+}

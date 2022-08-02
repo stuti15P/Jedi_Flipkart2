@@ -3,6 +3,7 @@
  */
 package com.flipkart.dao;
 
+<<<<<<< HEAD
 //import com.flipkart.exception.*;
 //import javafx.util.Pair;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public interface StudentDaoInterface {
  *
  */
 public interface StudentDaoInterface {
+>>>>>>> ba61d0fea56c8254f18d5e05686be4fd7020f1a1
 
     public void preferenceUpdate(String userID, List<String> preference) ;
     public void addCourse(String userID, String courseID) ;

@@ -71,7 +71,7 @@ public class StudentDaoImpl implements StudentDaoInterface{
                 System.out.println("Your Courses are Registered!");
                 
                     for(int i=0;i<4;i++) {
-                        this.addCourse(userID,preference.get(i));
+                        this.addCourse(preference.get(i),userID);
                     }
 
             }
@@ -87,7 +87,7 @@ public class StudentDaoImpl implements StudentDaoInterface{
      * @param userID
      */
     @Override
-    public void addCourse(String userID, String courseID) {
+    public void addCourse(String courseID,String userID) {
         try {
             Integer count = this.getNumberOfEnrolledCourses(userID);
 //            if(count>=6){
