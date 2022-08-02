@@ -9,8 +9,7 @@ import java.util.List;
 
 import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
-import com.flipkart.constant.SqlQueriesConstant;
-import com.flipkart.constant.SqlQueriesConstant;
+import com.flipkart.constant.SQLQueriesConstant;
 import com.flipkart.utils.DBUtils;
 
 /**
@@ -40,7 +39,7 @@ public class ProfessorDaoImpl implements ProfessorDaoInterface {
 		Connection connection=DBUtils.getConnection();
 		List<Course> courseList=new ArrayList<Course>();
 		try {
-			PreparedStatement statement = connection.prepareStatement(SqlQueriesConstant.GET_COURSES);
+			PreparedStatement statement = connection.prepareStatement(SQLQueriesConstant.GET_COURSES);
 			
 			statement.setString(1, profId);
 			//System.out.println("ErrorBeforeExe!!!");
@@ -75,7 +74,7 @@ public class ProfessorDaoImpl implements ProfessorDaoInterface {
 		Connection connection=DBUtils.getConnection();
 		List<EnrolledStudent> enrolledStudents=new ArrayList<EnrolledStudent>();
 		try {
-			PreparedStatement statement = connection.prepareStatement(SqlQueriesConstant.GET_ENROLLED_STUDENTS);
+			PreparedStatement statement = connection.prepareStatement(SQLQueriesConstant.GET_ENROLLED_STUDENTS);
 			statement.setString(1, userId);
 			
 			ResultSet results = statement.executeQuery();
@@ -111,7 +110,7 @@ public class ProfessorDaoImpl implements ProfessorDaoInterface {
 	    Connection connection = connectionSetup.getConnection();
 		try {
 			//System.out.println("Inside try!!!");
-			PreparedStatement statement = connection.prepareStatement(SqlQueriesConstant.ADD_GRADE);
+			PreparedStatement statement = connection.prepareStatement(SQLQueriesConstant.ADD_GRADE);
 			statement.setString(1, studentId);
 			statement.setString(2, courseCode);
 			statement.setInt(3, grade);
@@ -146,7 +145,7 @@ public class ProfessorDaoImpl implements ProfessorDaoInterface {
 		Connection connection=DBUtils.getConnection();
 		try 
 		{
-			PreparedStatement statement = connection.prepareStatement(SqlQueriesConstant.GET_PROF_NAME);
+			PreparedStatement statement = connection.prepareStatement(SQLQueriesConstant.GET_PROF_NAME);
 			
 			statement.setString(1, profId);
 			ResultSet rs = statement.executeQuery();

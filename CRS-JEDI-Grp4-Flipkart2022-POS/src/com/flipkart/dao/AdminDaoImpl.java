@@ -4,7 +4,7 @@ import com.flipkart.bean.Student;
 import com.flipkart.dao.AdminDaoInterface;
 import com.flipkart.utils.DBUtils;
 import com.flipkart.bean.Professor;
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+//import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,7 +19,7 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Student;
 import com.flipkart.bean.User;
-import com.flipkart.constant.SqlQueriesConstant;
+import com.flipkart.constant.SQLQueriesConstant;
 import com.flipkart.utils.DBUtils;
 
 import java.sql.Connection;
@@ -105,7 +105,7 @@ public class AdminDaoImpl implements AdminDaoInterface {
 		List<Course> courseList = new ArrayList<>();
 
 		try {
-			String sql = SqlQueriesConstant.VIEW_COURSE_QUERY;
+			String sql = SQLQueriesConstant.VIEW_COURSE_QUERY;
 			statement = connection.prepareStatement(sql);
 			ResultSet resultSet = statement.executeQuery();
 
@@ -133,7 +133,7 @@ public class AdminDaoImpl implements AdminDaoInterface {
 		statement = null;
 		try {
 			System.out.println("Debug 2: AdminDaoImpl, addCourse");
-			String sql = SqlQueriesConstant.ADD_COURSE_QUERY;
+			String sql = SQLQueriesConstant.ADD_COURSE_QUERY;
 			statement = connection.prepareStatement(sql);
 
 			statement.setString(1, course.getCourseId());
@@ -163,7 +163,7 @@ public class AdminDaoImpl implements AdminDaoInterface {
 	public void deleteCourse(String courseId) throws SQLException {
 		statement = null;
 		try {
-			String sql = SqlQueriesConstant.DELETE_COURSE_QUERY;
+			String sql = SQLQueriesConstant.DELETE_COURSE_QUERY;
 			statement = connection.prepareStatement(sql);
 
 			statement.setString(1, courseId);
