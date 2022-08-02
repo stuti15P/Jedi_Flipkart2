@@ -101,7 +101,8 @@ public class CRSApplication {
 			case 1:
 				// Student part
 				StudentCRS stucrs =new StudentCRS();
-				stucrs.studentHelpmenu();
+				stucrs.showMenu(userId);
+				
 				
 			case 2 :
 				// PROF PART
