@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.flipkart.bean.Course;
+import com.flipkart.bean.Student;
+import com.flipkart.dao.AdminDaoImpl;
+
 
 
 /**
@@ -23,20 +26,21 @@ import com.flipkart.bean.Course;
 public class AdminServiceImpl implements AdminService{
 	AdminDB admindb =new AdminDB();
 	AdminDaoImpl adminDaoImpl =new AdminDaoImpl();
-	
-	
+
+
 	public ProfessorDB professorDB = new ProfessorDB();
 	@Override
-	public void approvedStudent() {
+	public void approveStudent(String userId) {
 		// TODO Auto-generated method stub
-		
+		adminDaoImpl.approveStudent(userId);
+
 	}
 
 	@Override
 	public void addProfessor(Professor professor) {
 		// TODO Auto-generated method stub
-		professorDB.professorList.put(4,professor);
-		System.out.println("Professor Added!");
+		adminDaoImpl.addProfessor(professor);
+//		System.out.println("Professor Added!");
 
 
 	}
@@ -45,15 +49,15 @@ public class AdminServiceImpl implements AdminService{
 //	public void addCourseToCatalogue(Course course) {
 //		// TODO Auto-generated method stub
 //		admindb.courseList.add(course);
-//		
+//
 //	}
-	
+
 	@Override
 	public void addCourseToCatalogue(Course newCourse, List<Course> courseList) throws SQLException {
-		
+
 		if(!AdminValidator.isValidNewCourse(newCourse, courseList)) {
 			System.out.println("courseId: " + newCourse.getCourseId() + " already present in catalog!");
-			
+
 		}
 		System.out.println("Debug 1: AdminServiceImpl, addCourseToCatalogue");
 		try {
@@ -62,7 +66,6 @@ public class AdminServiceImpl implements AdminService{
 		catch(SQLException e) {
 			throw e;
 		}
-		
 	}
 
 	@Override
@@ -71,7 +74,7 @@ public class AdminServiceImpl implements AdminService{
 			System.out.println("courseCode: " + courseId + " not present in catalog!");
 			//throw new CourseNotFoundException(courseId);
 		}
-		
+
 		try {
 			adminDaoImpl.deleteCourse(courseId);
 		}
@@ -93,10 +96,14 @@ public class AdminServiceImpl implements AdminService{
 //		{
 //			courseList = AdminDaoImpl.viewCourses();
 //		}
-//		
+//
 		return adminDaoImpl.viewCourses();
-		
 
+
+	}
+
+	public void viewPendingAdmissions() {
+		adminDaoImpl.viewPendingApprovals();
 	}
 
 }

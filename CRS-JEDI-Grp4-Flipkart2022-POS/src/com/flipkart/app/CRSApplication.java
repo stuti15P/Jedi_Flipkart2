@@ -6,6 +6,12 @@ import com.flipkart.app.StudentCRS;
 import com.flipkart.app.ProfessorCRS;
 import com.flipkart.app.AdminCRS;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import java.sql.SQLException;
 
 /**
@@ -14,7 +20,8 @@ import java.sql.SQLException;
  */
 
 
-
+import java.sql.Connection;
+import java.util.ConcurrentModificationException;
 import java.util.Scanner;
 
 
@@ -122,10 +129,7 @@ public class CRSApplication {
 			
 			System.out.println("Invalid Credentials");
 		}  
-		
-		
-			
-				
+
 	}
 	
 	public void passwordUpdation() {
