@@ -14,6 +14,12 @@ public class EnrolledStudent {
 	
 	
 	
+	public EnrolledStudent(String courseId, String courseName, String studentId) {
+		this.courseId=courseId;
+		this.courseName=courseName;
+		this.studentId=studentId;
+		// TODO Auto-generated constructor stub
+	}
 	public String getCourseId() {
 		return courseId;
 	}

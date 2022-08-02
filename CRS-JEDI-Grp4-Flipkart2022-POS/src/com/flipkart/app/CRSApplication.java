@@ -33,6 +33,7 @@ public class CRSApplication {
 		helpMenu();  
 		Scanner in = new Scanner(System.in);
         int userInp = in.nextInt();  
+        int id=1;
         CRSApplication crsapp = new CRSApplication();
         
         while(userInp != 0)
