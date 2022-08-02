@@ -1,5 +1,12 @@
+/**
+ * 
+ */
 package com.flipkart.dao;
 
-public class ProfessorDaoInterface {
+/**
+ * @author stuti.priyambda
+ *
+ */
+public interface ProfessorDaoInterface {
 
 }

@@ -9,6 +9,13 @@ public class Course {
 	
 	
 	/**
+	 * Default Constructor
+	 */
+	public Course() {
+		
+	}
+	
+	/**
 	 * @param courseId
 	 * @param courseName
 	 * @param assignedProfessor

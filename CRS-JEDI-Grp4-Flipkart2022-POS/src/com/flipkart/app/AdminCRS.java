@@ -3,6 +3,7 @@
  */
 package com.flipkart.app;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 import com.flipkart.bean.Course;
@@ -20,8 +21,9 @@ public class AdminCRS {
 	AdminServiceImpl adminserviceimpl =new AdminServiceImpl();
 	/**
 	 * Method to Create Admin Menu
+	 * @throws SQLException 
 	 */
-	public void adminHelpMenu(){
+	public void adminHelpMenu() throws SQLException{
 		
 		while(CRSApplication.loggedin ) {
 			System.out.println("*****........... Admin Menu .......*****");
@@ -82,9 +84,20 @@ public class AdminCRS {
 	}
 	
 	
-	private void viewCoursesInCatalogue() {
+	private List<Course> viewCoursesInCatalogue() throws SQLException {
 		//System.out.println("view course catalogue");
-		adminserviceimpl.viewCourseCatalog();
+		List<Course> courseList = adminserviceimpl.viewCourseCatalog();
+		if(courseList.size() == 0) {
+			System.out.println("No course in the catalogue!");
+			return courseList;
+		}
+		System.out.println(String.format("%20s | %20s | %20s | %20s","COURSE ID", "COURSE NAME", "INSTRUCTOR", "COURSE CREDIT"));
+		for(Course course : courseList) {
+			System.out.println(String.format("%20s | %20s | %20s | %20s", course.getCourseId(), course.getCourseName(), course.getProfessorId(), course.getCourseCredits()));
+		}
+		return courseList;
+		
+		//return adminserviceimpl.viewCourseCatalog();
 	}
 	
 	private void generateReportCard() 
@@ -100,6 +113,38 @@ public class AdminCRS {
 	private void assignCourseToProfessor() {
 		
 		System.out.println("\nAssign professor ");
+		
+//		List<Professor> professorList= adminOperation.viewProfessors();
+//		logger.info("*************************** Professor *************************** ");
+//		logger.info(String.format("%20s | %20s | %20s ", "ProfessorId", "Name", "Designation"));
+//		for(Professor professor : professorList) {
+//			logger.info(String.format("%20s | %20s | %20s ", professor.getUserId(), professor.getName(), professor.getDesignation()));
+//		}
+//		
+//		
+//		logger.info("\n\n");
+//		List<Course> courseList= adminOperation.viewCourses(1);
+//		logger.info("**************** Course ****************");
+//		logger.info(String.format("%20s | %20s", "CourseCode", "CourseName"));
+//		for(Course course : courseList) {
+//			logger.info(String.format("%20s | %20s ", course.getCourseCode(), course.getCourseName()));
+//		}
+//		
+//		logger.info("Enter Course Code:");
+//		String courseCode = scanner.next();
+//		
+//		logger.info("Enter Professor's User Id:");
+//		String userId = scanner.next();
+//		
+//		try {
+//			
+//			adminOperation.assignCourse(courseCode, userId);
+//		
+//		}
+//		catch(CourseNotFoundException | UserNotFoundException e) {
+//			
+//			logger.error(e.getMessage());
+//		}
 	}
 
 	/**
@@ -148,25 +193,16 @@ public class AdminCRS {
 		System.out.println("Approve students");
 		
 	}
-
-//	/**
-//	 * Method to delete Course from catalogue
-//	 * @throws CourseNotFoundException
-//	 */
-	private void removeCourse() {
-		//System.out.println("Remove course");
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Please Enter ID of the course to remove!!");
-		String courseId = sc.nextLine();
-		adminserviceimpl.deleteCourse(courseId);
-		System.out.println("\n" +courseId + " course Removed!!  ");
-	}
-
+	
 //	/**
 //	 * Method to add Course to catalogue
 //	 * @throws CourseExistsAlreadyException
 //	 */
-	private void addCourseToCatalogue() {
+	private void addCourseToCatalogue() throws SQLException {
+		
+		System.out.println("Check1");
+		List<Course> courseList = adminserviceimpl.viewCourseCatalog();
+		System.out.println("Check2");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please Enter ID of the course");
 		String courseId = sc.nextLine();
@@ -179,10 +215,27 @@ public class AdminCRS {
 
 		Course newcourse = new Course(courseId, courseName, professorId, courseCredit);
 		System.out.println("going to add Course ");
-		adminserviceimpl.addCourseToCatalogue(newcourse);
+		adminserviceimpl.addCourseToCatalogue(newcourse, courseList);
 		System.out.println("**** course Added!!  ******");
 
 	}
+	
+
+//	/**
+//	 * Method to delete Course from catalogue
+//	 * @throws CourseNotFoundException
+//	 */
+	private void removeCourse() throws SQLException{
+		//System.out.println("Remove course");
+		List<Course> courseList = adminserviceimpl.viewCourseCatalog();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please Enter ID of the course to remove!!");
+		String courseId = sc.nextLine();
+		adminserviceimpl.deleteCourse(courseId, courseList);
+		
+	}
+
+
 	
 	private void viewPendingAdmissions()
 	{

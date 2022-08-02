@@ -6,6 +6,8 @@ import com.flipkart.app.StudentCRS;
 import com.flipkart.app.ProfessorCRS;
 import com.flipkart.app.AdminCRS;
 
+import java.sql.SQLException;
+
 /**
  * @author stuti.priyambda
  *
@@ -29,7 +31,7 @@ public class CRSApplication {
 		System.out.print("Press 0 to exit ");
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		helpMenu();  
 		Scanner in = new Scanner(System.in);
         int userInp = in.nextInt();  
@@ -73,7 +75,7 @@ public class CRSApplication {
 		System.out.println("*****..........................*******");
 	}
 	
-	public void login()
+	public void login() throws SQLException
 	{
 		Scanner in= new Scanner(System.in);
 		
