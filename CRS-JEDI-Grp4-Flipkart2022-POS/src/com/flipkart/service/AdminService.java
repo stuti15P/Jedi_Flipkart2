@@ -6,7 +6,7 @@ public interface AdminService {
 
 	//public List<RegisteredCourse> createGradeCard();
 	
-	public void approveStudent(Student student);
+	public void approveStudent(String useId);
 	public void addProfessor(Professor professor);
 	public void addCourseToCatalogue(Course course);
 	public void viewCourseCatalog();

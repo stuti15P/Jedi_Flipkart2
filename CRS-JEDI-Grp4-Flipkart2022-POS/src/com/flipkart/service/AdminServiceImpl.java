@@ -8,6 +8,8 @@ import com.flipkart.service.ProfessorDB;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Course;
 import com.flipkart.bean.Student;
+import com.flipkart.dao.AdminDaoImpl;
+
 
 
 /**
@@ -17,17 +19,19 @@ import com.flipkart.bean.Student;
 public class AdminServiceImpl implements AdminService{
 	AdminDB admindb =new AdminDB();
 	public ProfessorDB professorDB = new ProfessorDB();
+	AdminDaoImpl adminDaoImpl = new AdminDaoImpl();
 	@Override
-	public void approveStudent(Student student) {
+	public void approveStudent(String userId) {
 		// TODO Auto-generated method stub
+		adminDaoImpl.approveStudent(userId);
 		
 	}
 
 	@Override
 	public void addProfessor(Professor professor) {
 		// TODO Auto-generated method stub
-		professorDB.professorList.put(4,professor);
-		System.out.println("Professor Added!");
+		adminDaoImpl.addProfessor(professor);
+//		System.out.println("Professor Added!");
 
 
 	}
@@ -36,7 +40,7 @@ public class AdminServiceImpl implements AdminService{
 	public void addCourseToCatalogue(Course course) {
 		// TODO Auto-generated method stub
 		admindb.courseList.add(course);
-		
+
 	}
 
 	@Override
@@ -64,6 +68,10 @@ public class AdminServiceImpl implements AdminService{
 		}
 
 
+	}
+
+	public void viewPendingAdmissions() {
+		adminDaoImpl.viewPendingApprovals();
 	}
 
 }
