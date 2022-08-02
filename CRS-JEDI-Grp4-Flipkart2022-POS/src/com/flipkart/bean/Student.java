@@ -9,14 +9,14 @@ public class Student extends User {
 	private int semester;
 	private boolean feePaymentStatus;
 	private String password;
-	private boolean isRegistered;
+	private boolean isApproved;
 	
 	
 	/**
 	 * @param branch
 	 * @param semester
 	 */
-	public Student(String userID, String name, String role, String password , String branch, int semester,boolean feePaymentStatus,boolean isRegistered ) {
+	public Student(String userID, String name, String role, String password , String branch, int semester,boolean feePaymentStatus,boolean isApproved ) {
 		super(userID, name, role, password);
 		//this.studentId = studentId;
 		//this.name =studentName;
@@ -24,7 +24,10 @@ public class Student extends User {
 		this.branch = branch;
 		this.semester = semester;
 		this.feePaymentStatus = feePaymentStatus;
-		this.isRegistered = isRegistered;
+		this.isApproved = isApproved;
+	}
+	public Student(){
+
 	}
 	
 	
@@ -75,7 +78,7 @@ public class Student extends User {
      * @return
      */
     public boolean isRegistered() {
-        return isRegistered;
+        return isApproved;
     }
 
     /**
@@ -84,7 +87,7 @@ public class Student extends User {
      */
 
     public void setRegistered(boolean registered) {
-        isRegistered = registered;
+        isApproved = registered;
     }
     
 

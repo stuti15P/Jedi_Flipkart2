@@ -6,13 +6,22 @@ import com.flipkart.app.StudentCRS;
 import com.flipkart.app.ProfessorCRS;
 import com.flipkart.app.AdminCRS;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.sql.SQLException;
+
 /**
  * @author stuti.priyambda
  *
  */
 
 
-
+import java.sql.Connection;
+import java.util.ConcurrentModificationException;
 import java.util.Scanner;
 
 
@@ -29,7 +38,7 @@ public class CRSApplication {
 		System.out.print("Press 0 to exit ");
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		helpMenu();  
 		Scanner in = new Scanner(System.in);
         int userInp = in.nextInt();  
@@ -73,16 +82,16 @@ public class CRSApplication {
 		System.out.println("*****..........................*******");
 	}
 	
-	public void login()
+	public void login() throws SQLException
 	{
 		Scanner in= new Scanner(System.in);
 		
 		String userId, password;
 		
-		System.out.println("Login");
-		System.out.println("UserId");
+		System.out.println("**************** Login System!!! ****************");
+		System.out.println("Please Enter your UserId");
 		userId= in.next();
-		System.out.println("Password");
+		System.out.println("Please Enter your Password");
 		password =in.next();
 		boolean status =true;     // Login Done.
 		
@@ -121,10 +130,7 @@ public class CRSApplication {
 			
 			System.out.println("Invalid Credentials");
 		}  
-		
-		
-			
-				
+
 	}
 	
 	public void passwordUpdation() {
