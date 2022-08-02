@@ -1,3 +1,8 @@
 /.metadata/
 .idea/
 out
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+CRS-JEDI-Grp4-Flipkart2022-POS/bin/.DS_Store
