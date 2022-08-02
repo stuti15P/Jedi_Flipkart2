@@ -23,9 +23,6 @@ public class SQLQueriesConstant {
 		public static final String GET_ENROLLED_STUDENTS="select course.courseId,course.courseName,registeredcourse.studentId from course inner join registeredcourse on course.courseId = registeredcourse.courseCode where course.professorId = ? order by course.courseId";
 		public static final String ADD_GRADE="insert into registeredcourse(studentId, coursecode, gradeConstant) values (?, ?, ?)";//"update registeredcourse set GradeConstant=? where courseCode=? and studentId=?";
 		public static final String GET_PROF_NAME = "select name from user where userId = ?";
-		
-	
-
 	
 
 }
