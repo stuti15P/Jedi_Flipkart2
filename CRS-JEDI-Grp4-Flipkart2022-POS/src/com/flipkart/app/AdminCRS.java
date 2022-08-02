@@ -2,7 +2,7 @@
  * 
  */
 package com.flipkart.app;
-
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 import com.flipkart.bean.Course;
@@ -21,7 +21,7 @@ public class AdminCRS {
 	/**
 	 * Method to Create Admin Menu
 	 */
-	public void adminHelpMenu() throws SQLException{
+	public void adminHelpMenu() throws SQLException {
 		
 		while(CRSApplication.loggedin ) {
 			System.out.println("*****........... Admin Menu .......*****");

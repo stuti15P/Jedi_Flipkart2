@@ -29,7 +29,6 @@ public class AdminServiceImpl implements AdminService{
 
 
 	public ProfessorDB professorDB = new ProfessorDB();
-	AdminDaoImpl adminDaoImpl = new AdminDaoImpl();
 	@Override
 	public void approveStudent(String userId) {
 		// TODO Auto-generated method stub
