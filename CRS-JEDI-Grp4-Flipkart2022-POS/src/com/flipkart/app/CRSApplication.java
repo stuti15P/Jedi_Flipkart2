@@ -81,10 +81,10 @@ public class CRSApplication {
 		
 		String userId, password;
 		
-		System.out.println("Login");
-		System.out.println("UserId");
+		System.out.println("**************** Login System!!! ****************");
+		System.out.println("Please Enter your UserId");
 		userId= in.next();
-		System.out.println("Password");
+		System.out.println("Please Enter your Password");
 		password =in.next();
 		boolean status =true;     // Login Done.
 		

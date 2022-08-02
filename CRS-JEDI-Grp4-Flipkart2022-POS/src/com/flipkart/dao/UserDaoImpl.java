@@ -18,7 +18,7 @@ public class UserDaoImpl implements UserDaoInterface{
 			PreparedStatement preparedStatement=connection.prepareStatement(SqlQueriesConstant.VERIFY_CREDENTIALS);
 			preparedStatement.setString(1,userId);
 			ResultSet resultSet = preparedStatement.executeQuery();
-			
+			System.out.println("Verifying Credentials!!  UseDaoImpl:: " +  "password in the database is : " + resultSet.getString("password"));
 			if(!resultSet.next())
 				throw new UserNotFoundException(userId);
 			else if(password.equals(resultSet.getString("password")))
