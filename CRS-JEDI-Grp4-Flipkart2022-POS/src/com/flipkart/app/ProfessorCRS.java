@@ -57,6 +57,7 @@ public class ProfessorCRS {
    }
     
     
+    
     public void showEnrolledStudents() {
     	Scanner sc = new Scanner(System.in);
     	System.out.println("Please Enter your userID");
@@ -82,6 +83,8 @@ public void addGrades() {
 		String courseId = sc.nextLine();
 		System.out.println("Please grade this student for the given course");
 		int grade = sc.nextInt();
+//		System.out.println("Please enter unique Id to confirm");
+//		int id = sc.nextInt();
     	professorServiceImpl.addGrade(studentId, courseId, grade);
     	
     }
@@ -100,4 +103,3 @@ public void addGrades() {
     }
     
 }
-

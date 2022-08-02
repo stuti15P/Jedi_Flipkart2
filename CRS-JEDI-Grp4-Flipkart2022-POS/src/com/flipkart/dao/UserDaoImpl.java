@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.flipkart.constant.SqlQueriesConstant.SQLQueriesConstants;
+import com.flipkart.constant.SqlQueriesConstant;
 import com.flipkart.exception.UserNotFoundException;
 import com.flipkart.utils.DBUtils;
 
@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDaoInterface{
 		try
 		{
 			//open db connection
-			PreparedStatement preparedStatement=connection.prepareStatement(SQLQueriesConstants.VERIFY_CREDENTIALS);
+			PreparedStatement preparedStatement=connection.prepareStatement(SqlQueriesConstant.VERIFY_CREDENTIALS);
 			preparedStatement.setString(1,userId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			
