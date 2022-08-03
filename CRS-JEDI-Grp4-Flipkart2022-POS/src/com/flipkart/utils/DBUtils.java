@@ -14,7 +14,7 @@ public class DBUtils {
 	 */
 	
 	  static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";  
-	  static final String DB_URL = "jdbc:mysql://localhost/crsdatabase";
+	  static final String DB_URL = "jdbc:mysql://localhost/crsdatabasefinal";
 
 	   //  Database credentials
 	   static final String USER = "root";
@@ -49,5 +49,4 @@ public class DBUtils {
 		return conn;
 
 	}//end main
-	}
 }

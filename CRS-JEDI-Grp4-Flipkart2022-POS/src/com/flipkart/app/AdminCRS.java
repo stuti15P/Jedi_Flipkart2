@@ -10,6 +10,7 @@ import com.flipkart.service.AdminServiceImpl;
 import com.flipkart.bean.Professor;
 import com.flipkart.app.CRSApplication;
 import com.flipkart.bean.Student;
+import com.flipkart.bean.Grade;
 /**
  * @author stuti.priyambda
  *
@@ -100,9 +101,42 @@ public class AdminCRS {
 	
 	private void generateReportCard() 
 	{
-		
-		System.out.println("\nthe StudentId for report card generation : ");
-		
+//
+//		List<Grade> grade_card=null;
+//		boolean isReportGenerated = true;
+//
+//		Scanner in = new Scanner(System.in);
+//
+//		System.out.println("\nEnter the StudentId for report card generation : ");
+//		String studentId = in.next();
+//
+//		try
+//		{
+//			adminserviceimpl.setGeneratedReportCardTrue(studentId);
+//			if(isReportGenerated) {
+//				grade_card = registrationInterface.viewGradeCard(studentId);
+//				System.out.println(String.format("%-20s %-20s %-20s","COURSE CODE", "COURSE NAME", "GRADE"));
+//
+//				if(grade_card.isEmpty())
+//				{
+//					System.out.println("You haven't registered for any course");
+//					return;
+//				}
+//
+//				for(Grade obj : grade_card)
+//				{
+//					System.out.println(String.format("%-20s %-20s %-20s",obj.getCrsCode(), obj.getCrsName(),obj.getGrade()));
+//				}
+//			}
+//			else
+//				System.out.println("Report card not yet generated");
+//		}
+//		catch (SQLException e)
+//		{
+//
+//			System.out.println(e.getMessage());
+//		}
+//
 	}
 
 	/**
