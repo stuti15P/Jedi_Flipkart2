@@ -1,42 +1,55 @@
+/**
+ * 
+ */
 package com.flipkart.bean;
 
-import java.util.Date;
+import com.flipkart.constants.GenderConstant;
+import com.flipkart.constants.RoleConstant;
 
 /**
- * @author stuti.priyambda
+ * @author stuti
  *
  */
-
 public class Admin extends User{
-	
-	private Date dateOfJoining;
+
+	private String dateOfJoining;
 
 	/**
-	 * Parameterized Constructor
-	 * @param userID
-	 * @param name
+	 * Default Constructor
+	 */
+	public Admin() {
+		
+	}
+	
+	/**
+	 * @param userName
+	 * @param userEmailId
+	 * @param userPassword
 	 * @param role
-	 * @param password
+	 * @param userId
+	 * @param phoneNo
+	 * @param gender
+	 * @param address
 	 * @param dateOfJoining
 	 */
-	public Admin(String userID, String name, String role, String password, Date dateOfJoining) {
-		super(userID, name, role, password);
+	public Admin(String userName, String userEmailId, String userPassword, RoleConstant role, int userId, String phoneNo,
+				 GenderConstant gender, String address, String dateOfJoining) {
+		super(userName, userEmailId, userPassword, role, userId, phoneNo, gender, address);
 		this.dateOfJoining = dateOfJoining;
 	}
 
 	/**
-	 * Get DOJ
-	 * @return
+	 * @return the dateOfJoining
 	 */
-	public Date getDateOfJoining() {
-        return dateOfJoining;
-    }
+	public String getDateOfJoining() {
+		return dateOfJoining;
+	}
 
 	/**
-	 * Set DOJ
-	 * @param dateOfJoining
+	 * @param dateOfJoining the dateOfJoining to set
 	 */
-    public void setDateOfJoining(Date dateOfJoining) {
-        this.dateOfJoining = dateOfJoining;
-    }
+	public void setDateOfJoining(String dateOfJoining) {
+		this.dateOfJoining = dateOfJoining;
+	}
+	
 }

@@ -1,89 +1,104 @@
 package com.flipkart.dao;
-import com.flipkart.bean.User;
-import com.flipkart.bean.Professor;
-import java.sql.SQLException;
-import java.util.List;
+
+import java.util.Vector;
 
 import com.flipkart.bean.Course;
+import com.flipkart.bean.GradeCard;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Student;
 import com.flipkart.bean.User;
+import com.flipkart.exceptions.CourseAlreadyExistsException;
+import com.flipkart.exceptions.CourseNotDeletedException;
+import com.flipkart.exceptions.CourseNotFoundException;
+import com.flipkart.exceptions.ProfessorHasNotGradedException;
+import com.flipkart.exceptions.ProfessorNotAddedException;
+import com.flipkart.exceptions.ProfessorNotDeletedException;
+import com.flipkart.exceptions.ProfessorNotFoundException;
+import com.flipkart.exceptions.StudentNotFoundException;
+import com.flipkart.exceptions.StudentNotFoundForApprovalException;
+import com.flipkart.exceptions.UserIdAlreadyInUseException;
+import com.flipkart.exceptions.UserNotAddedException;
 
 public interface AdminDaoInterface {
 
-	public void assignCourse(String courseId, String professorId) throws SQLException;
-
-
 	/**
-	 * View courses in the catalog
-	 *
-	 * @param catalogId: Catalog ID
-	 * @return List of courses in the catalog
-	 * @throws SQLException
-	 */
-	public List<Course> viewCourses() throws SQLException;
-
-
-	/**
-	 * Add Course using SQL commands
-	 *
-	 * @param course
-	 * @throws CourseFoundException
-	 */
-	public void addCourse(Course course) throws SQLException;
-
-
-	/**
-	 * Fetch Students yet to approved using SQL commands
-	 *
-	 * @return List of Students yet to approved
-	 */
-	public void viewPendingApprovals() throws SQLException;
-
-	/**
-	 * Delete Course using SQL commands
-	 *
-	 * @param courseId
-	 * @throws CourseNotFoundException
-	 * @throws CourseNotDeletedException
-	 */
-	public void deleteCourse(String courseId) throws SQLException;
-
-
-	/**
-	 * Approve Student using SQL commands
-	 *
-	 * @param studentId
-	 * @throws StudentNotFoundForApprovalException
-	 */
-	public void approveStudent(String userId) throws SQLException;
-
-	/**
-	 * Add professor using SQL commands
-	 *
+	 * 
 	 * @param professor
 	 * @throws ProfessorNotAddedException
 	 * @throws UserIdAlreadyInUseException
 	 */
-	public void addProfessor(Professor professor) throws SQLException;
+	void addProfessor(Professor professor) throws UserIdAlreadyInUseException, ProfessorNotAddedException;
 
 	/**
-	 * Method to add user using SQL commands
-	 *
+	 * 
+	 * @return
+	 */
+	Vector<Professor> viewProfessor();
+
+	/**
+	 * 
+	 * @param professorId
+	 * @throws ProfessorNotDeletedException
+	 * @throws ProfessorNotFoundException
+	 */
+	void deleteProfessor(int professorId) throws ProfessorNotFoundException, ProfessorNotDeletedException;
+
+	/**
+	 * 
+	 * @param studentId
+	 * @throws StudentNotFoundForApprovalException
+	 */
+	void approveStudentRegistration(int studentId) throws StudentNotFoundForApprovalException;
+
+	/**
+	 * 
+	 * @param course
+	 * @throws CourseAlreadyExistsException 
+	 */
+	void addCourse(Course course) throws CourseAlreadyExistsException;
+
+	/**
+	 * 
+	 * @return
+	 */
+	Vector<Course> viewCourse();
+
+	/**
+	 * 
+	 * @param courseId
+	 * @throws CourseNotDeletedException 
+	 * @throws CourseNotFoundException 
+	 */
+	void deleteCourse(int courseId) throws CourseNotFoundException, CourseNotDeletedException;
+
+	/**
+	 * 
 	 * @param user
-	 * @throws UserNotAddedException
-	 * @throws UserIdAlreadyInUseException
+	 * @throws UserIdAlreadyInUseException 
+	 * @throws UserNotAddedException 
 	 */
-	public void addUser(User user) throws SQLException;
-
+	void addUser(User user) throws UserNotAddedException, UserIdAlreadyInUseException;
 
 	/**
-	 * View professor in the institute
-	 *
-	 * @return List of the professors in the institute
+	 * 
+	 * @param studentId
 	 */
+	void setIsGenerateGrade(int studentId);
+
 	/**
-	 * @author stuti.priyambda
-	 *
+	 * 
+	 * @return
 	 */
+	Vector<Student> viewPendingAdmissions();
+
+	/**
+	 * 
+	 * @param studentId
+	 * @param semesterId
+	 * @throws StudentNotFoundException
+	 * @throws ProfessorHasNotGradedException
+	 * @return
+	 */
+	Vector<GradeCard> generateGradeCard(int studentId) throws StudentNotFoundException, ProfessorHasNotGradedException;
+
 }

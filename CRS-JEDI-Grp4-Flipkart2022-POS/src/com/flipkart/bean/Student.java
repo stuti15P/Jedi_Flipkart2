@@ -1,96 +1,98 @@
+/**
+ * 
+ */
 package com.flipkart.bean;
-import com.flipkart.bean.User;
-public class Student extends User {
-	
 
-	//private String studentId;
-	//private String studentName;
-	private String branch;
-	private int semester;
-	private boolean feePaymentStatus;
-	private String password;
+import com.flipkart.constants.GenderConstant;
+import com.flipkart.constants.RoleConstant;
+
+/**
+ * @author Komal
+ *
+ */
+public class Student extends User{
+
+	private String branchName;
+	private int studentId;
+	private int batch;
 	private boolean isApproved;
 	
+	/**
+	 * Default Constructor
+	 */
+	public Student() {
+		
+	}
 	
 	/**
-	 * @param branch
-	 * @param semester
+	 * @param userName
+	 * @param userEmailId
+	 * @param userPassword
+	 * @param role
+	 * @param userId
+	 * @param phoneNo
+	 * @param gender
+	 * @param address
+	 * @param branchName
+	 * @param studentId
+	 * @param batch
+	 * @param isApproved
 	 */
-	public Student(String userID, String name, String role, String password , String branch, int semester,boolean feePaymentStatus,boolean isApproved ) {
-		super(userID, name, role, password);
-		//this.studentId = studentId;
-		//this.name =studentName;
-		
-		this.branch = branch;
-		this.semester = semester;
-		this.feePaymentStatus = feePaymentStatus;
+	public Student(String userName, String userEmailId, String userPassword, RoleConstant role, int userId, String phoneNo,
+				   GenderConstant gender, String address, String branchName, int studentId, int batch, boolean isApproved) {
+		super(userName, userEmailId, userPassword, role, userId, phoneNo, gender, address);
+		this.branchName = branchName;
+		this.studentId = studentId;
+		this.batch = batch;
 		this.isApproved = isApproved;
 	}
-	public Student(){
 
-	}
-	
-	
 	/**
-	 * @return the branch
+	 * @return the branchName
 	 */
-	public String getBranch() {
-		return branch;
+	public String getBranchName() {
+		return branchName;
 	}
 	/**
-	 * @param branch the branch to set
+	 * @param branchName the branchName to set
 	 */
-	public void setBranch(String branch) {
-		this.branch = branch;
+	public void setBranchName(String branchName) {
+		this.branchName = branchName;
 	}
 	/**
-	 * @return the semester
+	 * @return the studentId
 	 */
-	public int getSemester() {
-		return semester;
+	public int getStudentId() {
+		return studentId;
 	}
 	/**
-	 * @param semester the semester to set
+	 * @param studentId the studentId to set
 	 */
-	public void setSemester(int semester) {
-		this.semester = semester;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
-	
-    /**
-     * Check Payment Status
-     * @return
-     */
-    public boolean isFeePaymentStatus() {
-        return feePaymentStatus;
-    }
-
-    /**
-     * Set Payment Status
-     * @param feePaymentStatus
-     */
-    public void setFeePaymentStatus(boolean feePaymentStatus) {
-        this.feePaymentStatus = feePaymentStatus;
-    }
-    
-    
-    /**
-     * Check Registration Status
-     * @return
-     */
-    public boolean isRegistered() {
-        return isApproved;
-    }
-
-    /**
-     * Set Registration Status
-     * @param registered
-     */
-
-    public void setRegistered(boolean registered) {
-        isApproved = registered;
-    }
-    
-
-	
-	
+	/**
+	 * @return the batch
+	 */
+	public int getBatch() {
+		return batch;
+	}
+	/**
+	 * @param batch the batch to set
+	 */
+	public void setBatch(int batch) {
+		this.batch = batch;
+	}
+	/**
+	 * @return the isApproved
+	 */
+	public boolean isApproved() {
+		return isApproved;
+	}
+	/**
+	 * @param isApproved the isApproved to set
+	 */
+	public void setApproved(boolean isApproved) {
+		this.isApproved = isApproved;
+	}
 }

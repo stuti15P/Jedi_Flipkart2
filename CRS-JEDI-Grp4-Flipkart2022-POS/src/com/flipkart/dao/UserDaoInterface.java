@@ -1,23 +1,38 @@
-/**
- * 
- */
 package com.flipkart.dao;
 
-import com.flipkart.exception.UserNotFoundException;
+import com.flipkart.exceptions.UserNotFoundException;
 
-/**
- * @author stuti.priyambda
- *
- */
 public interface UserDaoInterface {
+
 	/**
-	 * Method to verify credentials of Users from DataBase
-	 * @param userId
+	 * 
+	 * @param userEmailId
 	 * @param password
-	 * @return Verify credentials operation status
+	 * @return
 	 * @throws UserNotFoundException
 	 */
-	public boolean verifyCredentials(String userId, String password) throws UserNotFoundException; // throws UserNotFoundException;
-	
+	boolean verifyCredentials(String userEmailId, String password) throws UserNotFoundException;
+
+	/**
+	 * 
+	 * @param userEmailId
+	 * @param newPassword
+	 * @return
+	 */
+	boolean updatePassword(String userEmailId, String newPassword);
+
+	/**
+	 * 
+	 * @param userId
+	 * @return
+	 */
+	String getRole(String userEmailId);
+
+	/**
+	 * 
+	 * @param userEmailId
+	 * @return
+	 */
+	int getUserId(String userEmailId);
 
 }

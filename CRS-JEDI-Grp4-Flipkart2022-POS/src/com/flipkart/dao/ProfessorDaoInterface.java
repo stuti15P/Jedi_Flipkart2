@@ -1,20 +1,92 @@
-/**
- * 
- */
 package com.flipkart.dao;
 
-
-import java.util.List;
+import java.sql.SQLException;
+import java.util.Vector;
 
 import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
 
 public interface ProfessorDaoInterface {
-public List<Course> getCoursesByProfessor(String userId);
 
-public List<EnrolledStudent> getEnrolledStudents(String courseId);
+	/**
+	 * 
+	 * @param studentId
+	 * @param courseCode
+	 * @param grade
+	 * @throws SQLException 
+	 */
+	boolean addGrade(int studentId, int courseId, double gpa) throws SQLException;
 
-public Boolean addGrade(String studentId,String courseCode,int grade);
+	/**
+	 * 
+	 * @param professorId
+	 * @param courseSelectedId
+	 * @return
+	 * @throws SQLException 
+	 */
+	boolean addCourse(int professorId, int courseSelectedId) throws SQLException;
 
-public String getProfessorById(String profId);
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException 
+	 */
+	boolean checkSelectedCourse(int professorId) throws SQLException;
+
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException 
+	 */
+	Vector<EnrolledStudent> getEnrolledStudents(int professorId) throws SQLException;
+
+	/**
+	 * 
+	 * @return
+	 * @throws SQLException 
+	 */
+	Vector<Course> viewAvailableCourses() throws SQLException;
+
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException 
+	 */
+	Vector<Course> getCoursesByProfessor(int professorId) throws SQLException;
+
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException 
+	 */
+	String getProfessorById(int professorId) throws SQLException;
+
+	/**
+	 * Retrieve Professor Id from User Id
+	 * @param userId
+	 * @return
+	 * @throws SQLException 
+	 */
+	int getProfessorId(int userId) throws SQLException;
+
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException
+	 */
+	boolean checkCourse(int professorId) throws SQLException;
+
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException
+	 */
+	Vector<EnrolledStudent> getNotGradedStudents(int professorId) throws SQLException;
+
 }

@@ -1,22 +1,187 @@
-/**
- * 
- */
 package com.flipkart.service;
 
-import java.util.List;
+import java.sql.SQLException;
+import java.util.*;
 
+import com.flipkart.bean.*;
 import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
+import com.flipkart.dao.ProfessorDaoInterface;
+import com.flipkart.dao.ProfessorDaoOperation;
+import com.flipkart.exceptions.CourseNotFoundException;
 
 /**
- * @author stuti.priyambda
+ * @author Bhajan
  *
  */
-public interface ProfessorService {
+
+public class ProfessorService implements ProfessorInterface {
 	
-	public boolean addGrade(String studentId, String courseId, int grade);
-	public List<EnrolledStudent> viewEnrolledStudents(String profId);
-	public List<Course> viewOwnCourse(String profId);
+	private static volatile ProfessorService instance = null;
 	
+	/**
+	 * Default Constructor
+	 */
+	private ProfessorService() {
+		
+	}
 	
+	/**
+	 * Method to make ProfessorService Singleton
+	 */
+	public static ProfessorService getInstance() {
+		
+		if(instance == null) {
+			
+			synchronized(ProfessorService.class) {
+				
+				instance = new ProfessorService();
+			}
+		}
+		return instance;
+	}
+	
+	ProfessorDaoInterface professorDaoOperation = ProfessorDaoOperation.getInstance();
+	
+	/**
+	 * 
+	 * @param studentId
+	 * @param courseCode
+	 * @param gpa
+	 * @param semesterId
+	 * @return
+	 * @throws SQLException 
+	 */
+	@Override
+	public boolean addGrade(int studentId, int courseCode, double gpa) throws SQLException {
+		
+		try {
+			professorDaoOperation.addGrade(studentId, courseCode, gpa);
+		} catch (SQLException e) {
+			throw e;
+		}
+		return true;
+	}
+	
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException 
+	 */
+	@Override
+	public Vector<EnrolledStudent> viewEnrolledStudents(int professorId) throws SQLException {
+
+		Vector<EnrolledStudent> enrolledStudents = new Vector<>();
+		
+		try {
+			enrolledStudents = professorDaoOperation.getEnrolledStudents(professorId);
+		} catch (SQLException e) {
+			throw e;
+		}
+		return enrolledStudents;
+	}
+	
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException 
+	 */
+	@Override
+	public Vector<Course> viewCourses(int professorId) throws SQLException {
+
+		Vector<Course> coursesOffered = new Vector<>();
+		
+		try {
+			coursesOffered = professorDaoOperation.getCoursesByProfessor(professorId);
+		} catch (SQLException e) {
+			throw e;
+		}
+		return coursesOffered;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 * @throws SQLException 
+	 */
+	@Override
+	public Vector<Course> viewAvailableCourses() throws SQLException {
+
+ 		Vector<Course> availableCourses = new Vector<>();
+
+ 		try {
+ 			availableCourses = professorDaoOperation.viewAvailableCourses();
+ 		} catch (SQLException e) {
+ 			throw e;
+ 		}
+ 		return availableCourses;
+ 	}
+	
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException 
+	 */
+	@Override
+	public String getProfessorById(int professorId) throws SQLException {
+	
+		return professorDaoOperation.getProfessorById(professorId);
+	}
+	
+	/**
+	 * 
+	 * @param professorId
+	 * @param courseSelectedId
+	 * @return
+	 * @throws SQLException 
+	 * @throws CourseNotFoundException
+	 */
+	@Override
+	public boolean addCourse(int professorId, int courseSelectedId) throws SQLException, CourseNotFoundException {
+
+ 		try {
+ 			if(!professorDaoOperation.checkSelectedCourse(professorId)) {
+ 				return false;
+ 			}else if(!professorDaoOperation.checkCourse(courseSelectedId)) {
+ 				throw new CourseNotFoundException(courseSelectedId);
+ 			}
+ 			return professorDaoOperation.addCourse(professorId, courseSelectedId);
+ 		} catch (SQLException e) {
+ 			throw e;
+ 		}
+ 	}
+	
+	/**
+	 * 
+	 * @param userId
+	 * @return
+	 * @throws SQLException 
+	 */
+	@Override
+	public int getProfessorId(int userId) throws SQLException {
+	
+		return professorDaoOperation.getProfessorId(userId);
+	}
+	
+	/**
+	 * 
+	 * @param professorId
+	 * @return
+	 * @throws SQLException
+	 */
+	@Override
+	public Vector<EnrolledStudent> getNotGradedStudents(int professorId) throws SQLException {
+
+ 		Vector<EnrolledStudent> notGradedStudents = new Vector<>();
+
+ 		try {
+ 			notGradedStudents = professorDaoOperation.getNotGradedStudents(professorId);
+ 		} catch (SQLException e) {
+ 			throw e;
+ 		}
+ 		return notGradedStudents;
+ 	}
 }

@@ -1,12 +1,19 @@
+/**
+ * 
+ */
 package com.flipkart.bean;
 
+/**
+ * @author stuti
+ *
+ */
 public class Course {
 
-	private String courseId;
+	private int courseId;
 	private String courseName;
-	private String professorId;
-	private int courseCredits;
-	
+	private String courseDescription;
+	private double courseFee;
+	private int courseSeats;
 	
 	/**
 	 * Default Constructor
@@ -14,37 +21,37 @@ public class Course {
 	public Course() {
 		
 	}
-	
+
 	/**
 	 * @param courseId
 	 * @param courseName
-	 * @param assignedProfessor
-	 * @param courseCredits
+	 * @param courseDescription
+	 * @param courseFee
+	 * @param courseSeats
 	 */
-	public Course(String courseId, String courseName, String professorId, int courseCredits) {
+	public Course(int courseId, String courseName, String courseDescription, double courseFee, int courseSeats,
+			int professorId) {
 		super();
 		this.courseId = courseId;
 		this.courseName = courseName;
-		this.professorId = professorId;
-		this.courseCredits = courseCredits;
+		this.courseDescription = courseDescription;
+		this.courseFee = courseFee;
+		this.courseSeats = courseSeats;
 	}
-
 
 	/**
 	 * @return the courseId
 	 */
-	public String getCourseId() {
+	public int getCourseId() {
 		return courseId;
 	}
-
 
 	/**
 	 * @param courseId the courseId to set
 	 */
-	public void setCourseId(String courseId) {
+	public void setCourseId(int courseId) {
 		this.courseId = courseId;
 	}
-
 
 	/**
 	 * @return the courseName
@@ -53,7 +60,6 @@ public class Course {
 		return courseName;
 	}
 
-
 	/**
 	 * @param courseName the courseName to set
 	 */
@@ -61,39 +67,46 @@ public class Course {
 		this.courseName = courseName;
 	}
 
-
 	/**
-	 * @return the professorId
+	 * @return the courseDescription
 	 */
-	public String getProfessorId() {
-		return professorId;
+	public String getCourseDescription() {
+		return courseDescription;
 	}
 
-
 	/**
-	 * @param professorId the professorId to set
+	 * @param courseDescription the courseDescription to set
 	 */
-	public void setProfessorId(String professorId) {
-		this.professorId = professorId;
+	public void setCourseDescription(String courseDescription) {
+		this.courseDescription = courseDescription;
 	}
 
-
 	/**
-	 * @return the courseCredits
+	 * @return the courseFee
 	 */
-	public int getCourseCredits() {
-		return courseCredits;
+	public double getCourseFee() {
+		return courseFee;
 	}
 
+	/**
+	 * @param courseFee the courseFee to set
+	 */
+	public void setCourseFee(double courseFee) {
+		this.courseFee = courseFee;
+	}
 
 	/**
-	 * @param courseCredits the courseCredits to set
+	 * @return the courseSeats
 	 */
-	public void setCourseCredits(int courseCredits) {
-		this.courseCredits = courseCredits;
+	public int getCourseSeats() {
+		return courseSeats;
 	}
-	
-	
-	
+
+	/**
+	 * @param courseSeats the courseSeats to set
+	 */
+	public void setCourseSeats(int courseSeats) {
+		this.courseSeats = courseSeats;
+	}
 
 }
